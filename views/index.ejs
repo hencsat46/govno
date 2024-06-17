@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="../public/js/script.js" defer></script>
+    <link rel="stylesheet" href="../public/css/styles.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="navbar-title"><a href="http://localhost:3000/" class="home">КупиДевайс</a></div>
+            <div class="navbar-sub">
+                <div class="user-name" onclick="admin()">Админ</div>
+                <div class="log-out"><a href="http://localhost:3000/login" class="login">Войти</a></div>
+            </div>
+        </nav>
+
+        <div class="content">
+            <ul class="types">
+                <% types.forEach(function(type) { %>
+                    <li class="list-type" id="<%= type.name %>"><%= type.name %></li>
+                <% }); %>
+            </ul>
+            <div class="right-side">
+                <div class="brands">
+                    <% brands.forEach(function(brand) { %>
+                        <div id="<%= brand.name %>" onclick="filterBrand(this)"><%= brand.name %></div>
+                    <% }); %>
+                </div>
+                <div class="products">
+                    <% products.forEach(function(product) { %>
+                        <div class="product" id="<%= product.id %>" onclick="showProduct(this)">
+                            <div class="product-photo <%= product.type.name %> <%= product.brand.name %>">
+                                <img src="<%= product.img %>" alt="">
+                            </div>
+                            <div class="product-name"><%= product.name %></div>
+                        </div>
+                    <% }); %>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

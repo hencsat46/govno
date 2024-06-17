@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="../public/js/admin.js" defer></script>
+    <link rel="stylesheet" href="../public/css/admin.css">
+    <title>Document</title>
+</head>
+<body>
+    <section class="add-type">
+        <div class="add-title">Добавить тип</div>
+        <div class="info-wrapper">
+            <input type="text" class="info-text">
+        </div>
+        <div class="buttons">
+            <button class="close-modal" onclick="closeModal(this)">Закрыть</button>
+            <button class="add" onclick="addType(this)">Добавить</button>
+        </div>
+    </section>
+
+    <section class="add-brand">
+        <div class="add-title">Добавить бренд</div>
+        <div class="info-wrapper">
+            <input type="text" class="info-text">
+        </div>
+        <div class="buttons">
+            <button class="close-modal" onclick="closeModal(this)">Закрыть</button>
+            <button class="add" onclick="addBrand(this)">Добавить</button>
+        </div>
+    </section>
+
+    <section class="add-device">
+        <div class="add-title">Добавить устройство</div>
+        <select class="type-select" name="lskdfj">
+            <% types.forEach(function(type) { %>
+                <option value="<%= type.id %>"><%= type.name %></option>
+            <% }); %>
+        </select>
+        <select class="brand-select">
+            <% brands.forEach(function(brand) { %>
+                <option value="<%= brand.id %>"><%= brand.name %></option>
+            <% }); %>
+        </select>
+        <div class="name-wrapper">
+            <input type="text" class="name-text" placeholder="Введите название">
+        </div>
+        <div class="cost-wrapper">
+            <input type="text" class="cost-text" placeholder="Введите цену">
+        </div>
+        <input type="file" class="input-file">
+        <div class="des-wrapper">
+            <input type="text" class="des-text" placeholder="Описание">
+        </div>
+        <div class="ram-wrapper">
+            <input type="text" class="ram-text" placeholder="Оперативная память">
+        </div>
+
+        <div class="camera-wrapper">
+            <input type="text" class="camera-text" placeholder="Камера">
+        </div>
+
+        <div class="cpu-wrapper">
+            <input type="text" class="cpu-text" placeholder="Процессор">
+        </div>
+
+        <div class="ssd-wrapper">
+            <input type="text" class="ssd-text" placeholder="Внутренняя память">
+        </div>
+
+
+        
+        <div class="buttons">
+            <button class="close-modal" onclick="closeModal(this)">Закрыть</button>
+            <button class="add" onclick="addDevice(this)">Добавить</button>
+        </div>
+    </section>
+
+    
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="navbar-title"><a href="http://localhost:3000/" class="home">КупиДевайс</a></div>
+            <div class="navbar-sub">
+                
+            </div>
+        </nav>
+
+
+        <div class="buttons">
+            <div class="new-type" onclick="newType()">Добавить новый тип</div>
+            <div class="new-brand" onclick="newBrand()">Добавить новый Brand</div>
+            <div class="new-device" onclick="newDevice()">Добавить новый девайс</div>
+        </div>
+    </div>
+</body>
+</html>

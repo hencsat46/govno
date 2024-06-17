@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <script src="../public/js/product.js" defer></script>
+    <link rel="stylesheet" href="../public/css/product.css">
+</head>
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <div class="navbar-title"><a href="http://localhost:3000/" class="home">КупиДевайс</a></div>
+            <div class="navbar-sub">
+                <div class="user-name" onclick="admin()">Админ</div>
+                <div class="log-out"><a href="http://localhost:3000/login" class="login">Войти</a></div>
+            </div>
+        </nav>
+        <div class="product-info">
+            <div class="main-info">
+                <div class="product-image">
+                    <img src="../../<%= img %>" alt="">
+                </div>
+                <div class="name-photo">
+                    <div class="product-name"><%= name %></div>
+                    <div class="product-cost">
+                        <div class="price">от <%= price %> руб</div>
+                        <button class="add-cart" onclick="addToCart()">Добавить в корзину</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-spec">
+                <div class="description-title">Описание</div>
+                <div class="description-text"><%= description %></div>
+                <div class="spec-title">
+                    Характеристики:
+                </div>
+                <ul class="spec-list">
+                    <li class="ram">Оперативная память: <span><%= info[0].description %></span></li>
+                    <li class="camera even">Камера: <span><%= info[1].description %></span></li>
+                    <li class="processor">Процессор: <span><%= info[3].description %></span></li>
+                    <li class="ssd even">Объём памяти: <span><%= info[2].description %></span></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
